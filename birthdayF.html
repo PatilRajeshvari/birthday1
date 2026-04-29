@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Faiz 🎉</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: url('background.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', sans-serif;
+    overflow: hidden;
+}
+
+/* Dark overlay */
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.65);
+}
+
+/* Content */
+.content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1.8s ease forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1 {
+    font-size: 44px;
+    color: white;
+    letter-spacing: 2px;
+    margin: 0;
+    text-shadow: 0 0 12px rgba(255,255,255,0.4);
+}
+
+/* Name highlight */
+.name {
+    color: #ff3b3b;
+    text-shadow: 0 0 15px rgba(255,0,0,0.7);
+}
+
+/* Sub text */
+p {
+    color: #ccc;
+    margin-top: 12px;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+/* Subtle spark particles */
+.spark {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: rgba(255,255,255,0.6);
+    border-radius: 50%;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% { transform: translateY(-100vh); opacity: 0; }
+    20% { opacity: 1; }
+    100% { transform: translateY(100vh); opacity: 0; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="overlay"></div>
+
+<div class="content">
+    <h1>
+        🎂 Happy Birthday <span class="name">Faiz</span> ❤️
+    </h1>
+    <p>⚽ Wishing you a legendary year ahead</p>
+</div>
+
+<!-- Background music (optional, low volume) -->
+<audio autoplay loop volume="0.2">
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+// Minimal spark effect (clean, not messy)
+for (let i = 0; i < 40; i++) {
+    let spark = document.createElement("div");
+    spark.className = "spark";
+    spark.style.left = Math.random() * 100 + "vw";
+    spark.style.animationDuration = (Math.random() * 4 + 3) + "s";
+    document.body.appendChild(spark);
+}
+</script>
+
+</body>
+</html>
